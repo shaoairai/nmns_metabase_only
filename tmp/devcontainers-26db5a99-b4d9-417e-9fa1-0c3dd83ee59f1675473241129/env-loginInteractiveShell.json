@@ -1,0 +1,13 @@
+{
+	"LANG": "C.UTF-8",
+	"HOSTNAME": "89ce4a32e1d0",
+	"REMOTE_CONTAINERS_SOCKETS": "[\"/tmp/vscode-ssh-auth-67366fe9df498a76e97f9ae1ee95dac368545272.sock\"]",
+	"GPG_KEY": "0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D",
+	"HOME": "/root",
+	"REMOTE_CONTAINERS_IPC": "/tmp/vscode-remote-containers-ipc-67366fe9df498a76e97f9ae1ee95dac368545272.sock",
+	"PYTHON_VERSION": "3.7.2",
+	"SHLVL": "1",
+	"PATH": "/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+	"PYTHON_PIP_VERSION": "19.0.3",
+	"_": "/bin/cat"
+}

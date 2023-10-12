@@ -1,0 +1,14 @@
+{
+	"LS_COLORS": "",
+	"LD_LIBRARY_PATH": "/usr/local/nvidia/lib:/usr/local/nvidia/lib64",
+	"HOSTNAME": "c6dc264b32f1",
+	"REMOTE_CONTAINERS_SOCKETS": "[\"/tmp/vscode-ssh-auth-b214183d5ef9eec0c0ec4bf078b2dc03537dd57f.sock\"]",
+	"NVIDIA_VISIBLE_DEVICES": "all",
+	"HOME": "/root",
+	"PYTORCH_VERSION": "v1.11.0",
+	"REMOTE_CONTAINERS_IPC": "/tmp/vscode-remote-containers-ipc-b214183d5ef9eec0c0ec4bf078b2dc03537dd57f.sock",
+	"NVIDIA_DRIVER_CAPABILITIES": "compute,utility",
+	"SHLVL": "1",
+	"PATH": "/opt/conda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+	"_": "/bin/cat"
+}

@@ -1,0 +1,327 @@
+body {
+  background: #f5f7f8;
+}
+// 固定寬高
+.content {
+  width: 1024px;
+  height: 760px;
+  margin: 20px auto;
+}
+
+.display-img,
+.display-json {
+  background: $white;
+}
+
+// 左側圖片顯示區
+.display-img {
+  width: 616px;
+  padding: 20px;
+  .display-img-big {
+    position: relative;
+    width: 100%;
+    height: 576px;
+    overflow: hidden;
+    img {
+      width: auto;
+      height: fit-content;
+    }
+    canvas {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 0;
+      width: auto;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+      -o-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+  .singleObgZoomIn {
+    height: 576px;
+    img {
+      max-height: 100%;
+    }
+  }
+  .display-img-thumbnail {
+    position: relative;
+    padding-top: 28px;
+    .col {
+      width: 20%;
+      padding: 3px;
+      border: 3px solid $white;
+      border-radius: 12px;
+      &.active {
+        border: 3px solid $blue;
+      }
+    }
+    .thumbnailUploadImg {
+      cursor: pointer;
+    }
+  }
+  img {
+    width: 100%;
+    border-radius: 6px;
+  }
+}
+
+// 上傳圖片區域
+.upload-area-bg,
+.upload-area {
+  transition: all 0.25s ease;
+}
+.upload-area-bg {
+  width: 100%;
+  height: 72px;
+  background: $black;
+  opacity: 30%;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+.upload-area {
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+}
+
+// 遮頻
+.black-transparent-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background: $black;
+  opacity: 0.35;
+  z-index: 999;
+}
+
+.black-transparent-loading {
+  position: absolute;
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
+  padding: 0;
+  z-index: 999;
+}
+
+.smlImgArea-transparent-loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: $white;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+// 右側遮頻
+.anal-loading-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 64px);
+  background: $black;
+  z-index: 999;
+  opacity: 0;
+}
+
+// 縮圖裁切
+.cut-rec {
+  cursor: pointer;
+  border-radius: 6px;
+  height: 100px;
+  overflow: hidden;
+}
+
+// 右側回傳分析資料區
+.display-json {
+  position: relative;
+  width: 392px;
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
+.display-tag {
+  cursor: pointer;
+  height: 64px;
+  border-bottom: 1px solid $gray-100;
+  > div:first-child {
+    border-right: 1px solid $gray-100;
+  }
+  > div.active {
+    color: $blue;
+    font-weight: 700;
+  }
+}
+
+// 分析結果圖片列表
+.analysis-results {
+  margin-top: 28px;
+  width: 368px;
+  position: absolute;
+  top: 64px;
+  left: 12px;
+  .arrow-l,
+  .arrow-r {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background: unset;
+    border: unset;
+    cursor: pointer;
+  }
+  // 左右箭頭共用
+  .arrow-l::before,
+  .arrow-l::after,
+  .arrow-r::before,
+  .arrow-r::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    border-radius: 50px;
+    background: $gray-800;
+  }
+  // 左邊箭頭
+  .arrow-l::before,
+  .arrow-r::before {
+    top: 7px;
+    left: 4px;
+    transform: rotate(312deg);
+  }
+  .arrow-l::after,
+  .arrow-r::after {
+    top: 15px;
+    left: 4px;
+    transform: rotate(48deg);
+  }
+  // 右邊箭頭
+  .arrow-r::before {
+    transform: rotate(48deg);
+  }
+  .arrow-r::after {
+    transform: rotate(312deg);
+  }
+
+  // 圖片列表
+  .result-pic-list {
+    width: 280px;
+    overflow: hidden;
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .analysisThumbnailOuter {
+    overflow: hidden;
+    width: 5000px;
+
+    .analysisThumbnail {
+      cursor: pointer;
+      width: 100px;
+      height: 100px;
+      float: left;
+      padding: 3px;
+      border: 3px solid $white;
+      border-radius: 12px;
+      &.active {
+        border: 3px solid $blue;
+      }
+      img {
+        border-radius: 6px;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  // 分析結果的說明文字 / 單張圖片分析結果
+  .analysis-detail {
+    padding-top: 30px;
+    .analysis-text {
+      padding-top: 40px;
+      width: 336px;
+      text-align: center;
+    }
+    .analysis-items {
+      width: 336px;
+      > .col > .row > .col-4 {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// JSON
+
+.analysis-json-outer {
+  width: 368px;
+  position: absolute;
+  top: 64px;
+  left: 404px;
+}
+
+.analysis-json {
+  padding: 32px 24px;
+  textarea {
+    height: 552px;
+    resize: none;
+    border: none;
+  }
+}
+
+// 分析結果的 absolute 切換
+.results-absolute {
+  width: 368px;
+  position: absolute;
+  top: 64px;
+  left: 12px;
+}
+
+// 複製按鈕
+.copy {
+  padding-top: 20px;
+  border-top: 1px solid $gray-100;
+}
+
+// 網頁捲軸
+// 寬度
+textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+// 背景顏色
+textarea::-webkit-scrollbar-track {
+  background: $white;
+}
+
+// 把手顏色
+textarea::-webkit-scrollbar-thumb {
+  background: $gray-100;
+  border-radius: 50px;
+}
+
+.imgCutBgOper {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// 動畫
+.transitionDot5 {
+  transition: all 0.5s ease-out;
+}
+
+.transitionDot2 {
+  transition: all 0.2s ease-out;
+}
+
+.transitionDot1 {
+  transition: all 0.1s ease-out;
+}

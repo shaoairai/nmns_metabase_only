@@ -1,0 +1,31 @@
+<!-- 宣告我們要套用模板 -->
+{% extends "./base/base.html" %}
+
+<!-- 頁面標題 title -->
+{% block title %}人臉辨識{% endblock %}
+
+<!-- 嵌入CSS檔案 -->
+{% block style %}
+<link rel="stylesheet" type="text/css" href="./static/css/all.css" />
+{% endblock %}
+
+<!-- 嵌入主要內容 -->
+{% block main %}
+
+<script>
+    const iframe = document.createElement('iframe');
+    iframe.id = 'main';
+    iframe.src = '{{ iframeUrl }}'; // 帶入 Python 傳來的值
+    iframe.frameBorder = 0;
+    iframe.width = '100%';
+    iframe.style.height = '100vh';
+    iframe.allowTransparency = true;
+    document.body.appendChild(iframe);
+</script>
+
+{% endblock %}
+
+<!-- JS -->
+{% block script %}
+<!-- <script src="./static/js/main.js"></script> -->
+{% endblock %}
